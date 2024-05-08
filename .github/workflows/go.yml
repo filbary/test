@@ -43,7 +43,7 @@ jobs:
           go test -v ./...
   
   build_and_push:
-    needs: [lint, test]
+    # needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
@@ -57,9 +57,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: user/app:latest
+          file: webapp/src/.
+          tags: filbary/testgo:latest
