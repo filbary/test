@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math/rand"
 	"net/http"
 	"time"
@@ -18,7 +19,10 @@ func main() {
 	router := gin.Default()
 	router.GET("/convert/:fahrenheit", convertTemp)
 
-	router.Run("0.0.0.0:8080")
+	err := router.Run("0.0.0.0:8080")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func convertTemp(c *gin.Context) {
