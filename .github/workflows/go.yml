@@ -26,6 +26,8 @@ jobs:
         with:
           version: latest
           working-directory: webapp/src
+      - name: helm-lint
+        run: helm lint webapp/helm
 
   test:
     runs-on: ubuntu-latest
