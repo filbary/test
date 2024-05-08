@@ -22,7 +22,11 @@ jobs:
         go-version: '1.18'
       
     - name: Build
-      run: go build -v ./... main
+      run: | 
+          cd webapp
+          go build -v ./... main
 
     - name: Test
-      run: go test -v ./...
+      run: | 
+          cd webapp
+          go test -v ./...
