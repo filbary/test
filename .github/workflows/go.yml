@@ -62,5 +62,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          file: webapp/src/Dockerfile
+          context: webapp/src
           tags: filbary/testgo:latest
