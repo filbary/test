@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -25,3 +25,12 @@ jobs:
       run: | 
           cd webapp/src
           go test -v ./...
+  
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build the Docker image
+      run: docker build webapp/src/. -t filbary/testgo:latest
