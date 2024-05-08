@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build src/ --file Dockerfile --tag filbary/testgo:latest
+      run: docker build webapp/src/ --file Dockerfile --tag filbary/testgo:latest
