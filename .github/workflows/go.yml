@@ -24,7 +24,7 @@ jobs:
     - name: Build
       run: | 
           cd webapp
-          go build -v ./... main
+          go build -v ./...
 
     - name: Test
       run: | 
