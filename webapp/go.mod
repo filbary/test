@@ -1,4 +1,4 @@
-module example/web-service
+module github.com/filbary/webapp
 
 go 1.18
 
