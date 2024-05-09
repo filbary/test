@@ -3,16 +3,20 @@ replicaCount: 1
 image:
   repository: filbary/testlocust
   pullPolicy: IfNotPresent
-  tag: ""
+  tag: "latest"
 
-config:
-  locustfile: ./locustfile.py
-  headless: true
-  host: http://localhost:8080
-  users: 10
-  spawn-rate: 10
-  run-time: 5s
-  csv: example
+# config: |
+#   locustfile = ./locustfile.py
+#   headless = true
+#   host = http://testgo:8080
+#   users = 10
+#   spawn-rate = 10
+#   run-time = 5s
+#   csv = example
+
+config: |
+  locustfile = ./locustfile.py
+  host = http://testgo:8080
 
 imagePullSecrets: []
 nameOverride: "locust"

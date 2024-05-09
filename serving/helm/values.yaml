@@ -1,13 +1,13 @@
 replicaCount: 1
 
 image:
-  repository: filbary/testgo
+  repository: filbary/testserving
   pullPolicy: IfNotPresent
   tag: "latest"
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: "testgo"
+nameOverride: "serving"
+fullnameOverride: "serving"
 
 serviceAccount:
   create: true
@@ -24,8 +24,8 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: LoadBalancer
-  port: 8080
+  type: ClusterIP
+  port: 80
 
 resources:
   limits:
@@ -39,8 +39,12 @@ autoscaling:
   enabled: true
   minReplicas: 1
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 60
+  targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
+
+volumes: []
+
+volumeMounts: []
 
 nodeSelector: {}
 
