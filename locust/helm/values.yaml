@@ -1,0 +1,73 @@
+replicaCount: 1
+
+image:
+  repository: filbary/testlocust
+  pullPolicy: IfNotPresent
+  tag: ""
+
+config:
+  locustfile: ./locustfile.py
+  headless: true
+  host: http://localhost:8080
+  users: 10
+  spawn-rate: 10
+  run-time: 5s
+  csv: example
+
+imagePullSecrets: []
+nameOverride: "locust"
+fullnameOverride: "locust"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+volumes:
+- name: config
+  configMap:
+    name: locust
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts:
+- name: config
+  mountPath: "/locust.conf"
+  readOnly: true
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
