@@ -4,7 +4,6 @@ from locust import HttpUser, task, between
 
 class QuickstartUser(HttpUser):
     """A user class for quick start load testing scenarios."""
-    
     wait_time = between(1, 2)
 
     @task
