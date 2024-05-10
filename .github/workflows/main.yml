@@ -22,10 +22,10 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: latest
-          working-directory: webapp/src
+          working-directory: src/webapp
       - name: webapp test
         run: | 
-            cd webapp/src
+            cd src/webapp
             go test -v ./...
   
   python_lint:
@@ -75,6 +75,7 @@ jobs:
           tags: filbary/test${{ matrix.app }}:latest
     
   helm_lint:
+    needs: [build_and_push]
     runs-on: ubuntu-latest
     strategy:
       matrix:
