@@ -24,7 +24,7 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: LoadBalancer
+  type: NodePort
   port: 8080
   nodePort: 31699
 
