@@ -10,6 +10,7 @@ spec:
     spec:
       template:
         spec:
+          suspend: true
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
