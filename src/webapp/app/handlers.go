@@ -1,17 +1,24 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func ConvertTemp(c *gin.Context) {
-	var fahrenheit float64
-	fmt.Sscanf(c.Param("fahrenheit"), "%f", &fahrenheit)
+type CelsiusRequest struct {
+	Fahrenheit float64 `json:"fahrenheit"`
+}
 
-	celsius := CalculateCelcius(fahrenheit)
+func ConvertTemp(c *gin.Context) {
+	var req CelsiusRequest
+
+	if err := c.BindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request data"})
+		return
+	}
+
+	celsius := CalculateCelsius(req.Fahrenheit)
 
 	c.JSON(http.StatusOK, gin.H{
 		"celsius": celsius,

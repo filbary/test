@@ -16,7 +16,7 @@ func main() {
 	appID = fmt.Sprintf("%08x", rand.Uint32())
 
 	router := gin.Default()
-	router.GET("/convert/:fahrenheit", ConvertTemp)
+	router.POST("/convert/:fahrenheit", ConvertTemp)
 
 	err := router.Run("0.0.0.0:8080")
 	if err != nil {

@@ -26,6 +26,7 @@ securityContext: {}
 service:
   type: LoadBalancer
   port: 8080
+  nodePort: 31699
 
 resources:
   limits:

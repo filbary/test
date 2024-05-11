@@ -1,0 +1,12 @@
+---
+- name: Delete deployments
+  kubernetes.core.helm:
+    name: "{{ deploy.name }}"
+    chart_ref: mygithub/{{ deploy.name }}
+    namespace: "{{ namespace }}"
+    update_repo_cache: yes
+    kubeconfig: "{{ kubeconfig }}"
+    state: absent
+  with_items: "{{ reset.deployments }}"
+  loop_control:
+    loop_var: deploy

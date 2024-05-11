@@ -1,0 +1,7 @@
+---
+all:
+  vars:
+    reset:
+      deployments:
+        - name: locust
+        - name: web-app

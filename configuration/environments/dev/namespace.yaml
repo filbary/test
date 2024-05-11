@@ -1,0 +1,6 @@
+---
+all:
+  vars:
+    namespaces:
+      names:
+        - name: dev

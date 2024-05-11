@@ -1,0 +1,7 @@
+---
+all:
+  vars:
+    namespace: dev
+    kubeconfig: kubeconfig/config
+    # versions:
+    #   webapp:

@@ -1,0 +1,18 @@
+---
+- name: Ensure mygithub repo exists
+  kubernetes.core.helm_repository:
+    name: mygithub
+    repo_url: https://filbary.github.io/test
+
+- name: Ensure web-app is deployed
+  kubernetes.core.helm:
+    name: web-app
+    chart_ref: mygithub/web-app
+    namespace: "{{ namespace }}"
+    update_repo_cache: yes
+    kubeconfig: "{{ kubeconfig }}"
+    state: present
+    history_max: 3
+    wait: false
+    values:
+      fullnameOverride: web-app
