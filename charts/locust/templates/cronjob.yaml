@@ -21,6 +21,8 @@ spec:
               - "--headless"
               - "--host"
               - {{ .host | quote }}
+              - "--locustfile"
+              - {{ .file | quote }}
               - "--users"
               - {{ .users | quote }}
               - "--spawn-rate"

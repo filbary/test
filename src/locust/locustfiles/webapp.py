@@ -8,4 +8,4 @@ class WebappUser(HttpUser):
     @task
     def convert(self):
         """Accesses the convert endpoint to simulate a user interaction."""
-        self.client.post("/login", json={"fahrenheit":42})
+        self.client.post("/convert", json={"fahrenheit":42})
