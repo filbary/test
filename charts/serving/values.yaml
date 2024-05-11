@@ -24,8 +24,9 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 8080
+  nodePort: 31698
 
 resources:
   limits:
@@ -33,14 +34,14 @@ resources:
     memory: 128Mi
   requests:
     cpu: 100m
-    memory: 128Mi
+    memory: 256Mi
 
 autoscaling:
   enabled: true
   minReplicas: 1
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
+  # targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
 
 volumes: []
 
