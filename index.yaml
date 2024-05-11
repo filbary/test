@@ -3,6 +3,16 @@ entries:
   locust:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-05-11T13:26:51.665436514Z"
+    description: A Helm chart for Kubernetes
+    digest: 9ee7ce33e6eec25938a71f7f62f724740a66357b8a1cae17493df2834ee424f9
+    name: locust
+    type: application
+    urls:
+    - https://github.com/filbary/test/releases/download/locust-0.1.4/locust-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-05-11T13:23:46.392966881Z"
     description: A Helm chart for Kubernetes
     digest: 25b256b95d8b17c2b556b75c2c2fa86c7bdc926afb13cf1645ef6d34805dd15f
@@ -73,4 +83,4 @@ entries:
     urls:
     - https://github.com/filbary/test/releases/download/web-app-0.1.0/web-app-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-11T13:23:46.392980406Z"
+generated: "2024-05-11T13:26:51.665449598Z"
