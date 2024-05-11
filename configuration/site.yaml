@@ -11,4 +11,6 @@
     - include_role:
         name: webapp
     - include_role:
+        name: serving
+    - include_role:
         name: locust
