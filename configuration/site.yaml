@@ -3,13 +3,12 @@
   gather_facts: false
   become: false
   tasks:
-    - include_role:
-        name: namespaces
+    # - include_role:
+    #     name: namespaces
+    # - include_role:
+    #     name: reset
+
     - include_role:
         name: webapp
     - include_role:
         name: locust
-
-
-    # - include_role:
-    #     name: reset
