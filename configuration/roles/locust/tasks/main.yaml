@@ -16,3 +16,9 @@
     wait: false
     values:
       fullnameOverride: locust
+      webapp:
+        host: http://webapp:8080
+        file: webapp.py
+        users: 100
+        spawnRate: 10
+        runTime: 15
