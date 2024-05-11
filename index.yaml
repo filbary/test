@@ -105,6 +105,16 @@ entries:
   web-app:
   - apiVersion: v2
     appVersion: 1.0.1
+    created: "2024-05-11T14:18:23.313490496Z"
+    description: A Helm chart for Kubernetes
+    digest: fd1219058d8d5e0ced2aea33fb87233d1bdccda0515bee53c28b6f75b4cd6368
+    name: web-app
+    type: application
+    urls:
+    - https://github.com/filbary/test/releases/download/web-app-0.1.3/web-app-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.0.1
     created: "2024-05-11T13:51:29.97623584Z"
     description: A Helm chart for Kubernetes
     digest: beedbcb05aebf8d8510e2905a10234ebe73eb271cabb7672902ca844b2213f51
@@ -133,4 +143,4 @@ entries:
     urls:
     - https://github.com/filbary/test/releases/download/web-app-0.1.0/web-app-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-11T14:11:36.836194019Z"
+generated: "2024-05-11T14:18:23.313523768Z"
