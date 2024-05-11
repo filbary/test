@@ -5,3 +5,4 @@ all:
       deployments:
         - name: locust
         - name: web-app
+        - name: serving
