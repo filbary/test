@@ -4,7 +4,7 @@ ENV LOCUST_MASTER_HOST=localhost
 ENV LOCUST_MASTER_PORT=8080
 # ENV LOCUSTFILE_PATH=/mnt/locust/locustfile.py
 
-COPY locustfile.py ./locustfile.py
+COPY locustfiles ./locustfiles
 # COPY locust.conf ./locust.conf
 
 EXPOSE 8089

@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "helm.fullname" . }}
+  labels:
+    {{- include "helm.labels" . | nindent 4 }}
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: {{ .Chart.Name }}
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            command: ["locust"]
+            {{- with .Values.webapp }}
+            args:
+              - "--headless"
+              - "--host"
+              - {{ .host | quote }}
+              - "--users"
+              - {{ .users | quote }}
+              - "--spawn-rate"
+              - {{ .spawnRate | quote }}
+              - "--run-time"
+              - {{ .runTime | quote }}
+            {{- end }}
+            volumeMounts:
+            - mountPath: /example
+              name: storage
+          volumes:
+          - name: storage
+            persistentVolumeClaim:
+              claimName: locust-pvc
+          restartPolicy: OnFailure

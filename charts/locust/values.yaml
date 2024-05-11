@@ -15,8 +15,15 @@ image:
 #   csv = example
 
 config: |
-  locustfile = ./locustfile.py
+  locustfile = ./locustfiles
   host = http://testgo:8080
+  class-picker = true
+
+webapp:
+  host: http://webapp:8080
+  users: 100
+  spawnRate: 10
+  runTime: 15
 
 imagePullSecrets: []
 nameOverride: "locust"
