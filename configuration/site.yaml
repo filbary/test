@@ -5,8 +5,8 @@
   tasks:
     # - include_role:
     #     name: namespaces
-    # - include_role:
-    #     name: reset
+    - include_role:
+        name: reset
 
     - include_role:
         name: webapp
