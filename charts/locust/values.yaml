@@ -16,7 +16,6 @@ image:
 
 config: |
   locustfile = ./locustfiles
-  host = http://testgo:8080
   class-picker = true
 
 webapp:
