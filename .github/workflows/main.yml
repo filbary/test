@@ -46,7 +46,7 @@ jobs:
         
       - name: Analysing the code with pylint
         run: |
-            pylint src/locust/*.py
+            pylint src/locust/locustfiles/*.py
 
   build_and_push:
     needs: [go_lint_test, python_lint]
