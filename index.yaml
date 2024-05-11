@@ -94,6 +94,16 @@ entries:
   serving:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-05-11T15:10:06.431076883Z"
+    description: A Helm chart for Kubernetes
+    digest: b89dbf1e355192bce1ee7fb1243287de6a8bcd72e0e823167e047283cf34c297
+    name: serving
+    type: application
+    urls:
+    - https://github.com/filbary/test/releases/download/serving-0.1.4/serving-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-05-11T14:54:55.509343504Z"
     description: A Helm chart for Kubernetes
     digest: 17d463f32ecf26bd2c1593e8d40cd1c91ad132377e95a6bbcff1176a7df2c53f
@@ -133,6 +143,16 @@ entries:
     - https://github.com/filbary/test/releases/download/serving-0.1.0/serving-0.1.0.tgz
     version: 0.1.0
   web-app:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2024-05-11T15:10:06.614095647Z"
+    description: A Helm chart for Kubernetes
+    digest: 933f4cc7a5d2df1f9376dc559838a9d7094eba88250990d768c377518a564a41
+    name: web-app
+    type: application
+    urls:
+    - https://github.com/filbary/test/releases/download/web-app-0.1.8/web-app-0.1.8.tgz
+    version: 0.1.8
   - apiVersion: v2
     appVersion: 1.0.1
     created: "2024-05-11T14:54:55.630507684Z"
@@ -213,4 +233,4 @@ entries:
     urls:
     - https://github.com/filbary/test/releases/download/web-app-0.1.0/web-app-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-11T14:54:55.630564941Z"
+generated: "2024-05-11T15:10:06.614144138Z"
