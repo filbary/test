@@ -21,7 +21,4 @@
         file: webapp.py
         users: 100
         spawnRate: 10
-        runTime: 15
-      config: |
-        locustfile = ./locustfiles
-        class-picker = true
+        runTime: 360

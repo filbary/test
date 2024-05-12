@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: filbary/testlocust
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "latest"
 
 # config: |
@@ -67,7 +67,7 @@ volumes:
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
 - name: config
-  mountPath: "/locust.conf"
+  mountPath: "/etc/locust"
   readOnly: true
 
 nodeSelector: {}
