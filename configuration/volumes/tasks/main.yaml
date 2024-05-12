@@ -15,7 +15,7 @@
 #         server: "{{ nfs_ip }}"
 #         path: /data
 
-- name: Create pvc for locust jobs
+- name: Create pvc for webapp locust jobs
   kubernetes.core.k8s:
     state: present
     namespace: dev
@@ -23,7 +23,24 @@
       apiVersion: v1
       kind: PersistentVolumeClaim
       metadata:
-        name: locust-pvc
+        name: locust-webapp-pvc
+      spec:
+        accessModes:
+          - ReadWriteMany
+        resources:
+          requests:
+            storage: 256Mi
+        storageClassName: nfs-client
+
+- name: Create pvc for serving locust jobs
+  kubernetes.core.k8s:
+    state: present
+    namespace: dev
+    definition:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: locust-serving-pvc
       spec:
         accessModes:
           - ReadWriteMany
