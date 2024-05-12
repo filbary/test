@@ -38,4 +38,4 @@ spec:
           - name: storage
             persistentVolumeClaim:
               claimName: locust-webapp-pvc
-          restartPolicy: OnFailure
+          restartPolicy: Never
