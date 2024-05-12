@@ -67,7 +67,7 @@ volumes:
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
 - name: config
-  mountPath: "/etc/locust"
+  mountPath: "/etc/mylocust"
   readOnly: true
 
 nodeSelector: {}
