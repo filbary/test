@@ -5,8 +5,8 @@
   tasks:
     # - include_role:
     #     name: namespaces
-    # - include_role:
-    #     name: volumes
+    - include_role:
+        name: volumes
     - include_role:
         name: reset
 
@@ -14,5 +14,5 @@
     #     name: webapp
     # - include_role:
     #     name: serving
-    - include_role:
-        name: locust
+    # - include_role:
+    #     name: locust
