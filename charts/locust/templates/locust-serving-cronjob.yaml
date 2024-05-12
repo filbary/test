@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ include "helm.fullname" . }}
+  name: "{{ include "helm.fullname" . }}-serving"
   labels:
     {{- include "helm.labels" . | nindent 4 }}
 spec:
@@ -11,7 +11,7 @@ spec:
       template:
         spec:
           containers:
-          - name: "{{ .Chart.Name }}-serving"
+          - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
             command: ["locust"]
