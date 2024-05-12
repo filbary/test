@@ -34,7 +34,10 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          args: ["--config", "/etc/locust/locust.conf"]
+          env:
+          - name: LOCUST_CONF
+            value: "/etc/locust/locust.conf"
+          # args: ["--config", "/etc/locust/locust.conf"]
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
