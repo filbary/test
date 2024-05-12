@@ -11,7 +11,7 @@ spec:
       template:
         spec:
           containers:
-          - name: {{ .Chart.Name }}
+          - name: "{{ .Chart.Name }}-webapp"
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
             command: ["locust"]
