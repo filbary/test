@@ -17,7 +17,7 @@
     values:
       fullnameOverride: locust
       webapp:
-        host: http://webapp:8080
+        host: http://web-app:8080
         file: "./locustfiles/webapp.py"
         users: 100
         spawnRate: 10

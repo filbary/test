@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: filbary/testserving
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "latest"
 
 imagePullSecrets: []
