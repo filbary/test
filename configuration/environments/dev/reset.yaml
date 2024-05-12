@@ -4,5 +4,5 @@ all:
     reset:
       deployments:
         - name: locust
-        # - name: web-app
-        # - name: serving
+        - name: web-app
+        - name: serving
