@@ -37,7 +37,7 @@ spec:
           env:
           - name: LOCUST_CONF
             value: "/etc/locust/locust.conf"
-          # args: ["--config", "/etc/locust/locust.conf"]
+          args: ["--config", "/etc/locust/locust.conf"]
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
