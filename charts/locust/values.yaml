@@ -24,6 +24,7 @@ webapp:
   users: 100
   spawnRate: 10
   runTime: 15
+  csvFilename: "/example/stats"
 
 imagePullSecrets: []
 nameOverride: "locust"

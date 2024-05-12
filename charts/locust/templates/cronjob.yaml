@@ -5,12 +5,12 @@ metadata:
   labels:
     {{- include "helm.labels" . | nindent 4 }}
 spec:
-  schedule: "* * * * *"
+  schedule: "0 0 * * *"
   jobTemplate:
     spec:
+      suspend: true
       template:
         spec:
-          suspend: true
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -29,6 +29,8 @@ spec:
               - {{ .spawnRate | quote }}
               - "--run-time"
               - {{ .runTime | quote }}
+              - "--csv"
+              - {{ .csvFilename | quote }}
             {{- end }}
             volumeMounts:
             - mountPath: /example
