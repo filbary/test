@@ -27,7 +27,7 @@ webapp:
   csvFilename: "/statistics/"
 
 serving:
-  host: http://serving:8080
+  host: http://serving:8501
   file: "./locustfiles/serving.py"
   users: 100
   spawnRate: 10
