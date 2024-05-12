@@ -21,17 +21,17 @@ config: |
 webapp:
   host: http://webapp:8080
   file: "./locustfiles/webapp.py"
-  users: 100
-  spawnRate: 10
-  runTime: 360
+  users: 70000
+  spawnRate: 500
+  runTime: 300
   csvFilename: "/statistics/"
 
 serving:
   host: http://serving:8501
   file: "./locustfiles/serving.py"
-  users: 100
-  spawnRate: 10
-  runTime: 360
+  users: 70000
+  spawnRate: 500
+  runTime: 300
   csvFilename: "/statistics/"
 
 imagePullSecrets: []

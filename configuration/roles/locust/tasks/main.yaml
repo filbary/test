@@ -16,10 +16,3 @@
     wait: false
     values:
       fullnameOverride: locust
-      webapp:
-        host: http://web-app:8080
-        file: "./locustfiles/webapp.py"
-        users: 100
-        spawnRate: 10
-        runTime: 360
-        csvFilename: "/example/stats"
