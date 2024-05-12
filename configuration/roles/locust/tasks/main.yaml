@@ -18,7 +18,8 @@
       fullnameOverride: locust
       webapp:
         host: http://webapp:8080
-        file: ./locustfiles/webapp.py
+        file: "./locustfiles/webapp.py"
         users: 100
         spawnRate: 10
         runTime: 360
+        csvFilename: "/example/stats"
