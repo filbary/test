@@ -72,7 +72,7 @@ jobs:
         with:
           push: true
           context: "{{defaultContext}}:src/${{ matrix.app }}"
-          tags: filbary/test${{ matrix.app }}:latest
+          tags: filbary/${{ matrix.app }}:latest
     
   helm_lint:
     needs: [build_and_push]

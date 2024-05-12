@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: filbary/testlocust
+  repository: filbary/locust
   pullPolicy: Always
   tag: "latest"
 

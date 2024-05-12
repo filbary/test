@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: filbary/testwebapp
+  repository: filbary/webapp
   pullPolicy: Always
   tag: "latest"
 
